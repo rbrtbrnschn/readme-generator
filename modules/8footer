@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "This project was conceived listening to..."
+read SONG
+echo -e "<hr/> \n\n> This project was conceived to '$SONG'" >> $PWD/.temp
+clear
+echo "Finishing up."

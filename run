@@ -1,0 +1,30 @@
+#!/bin/bash
+# conceived during: Hooked on a feeling
+
+SRC="$PWD"
+MODULES="$SRC/modules"
+TEMP=".temp"
+README="README.md"
+EDITOR=".editor"
+
+# Run modules
+if [ -f $TEMP ]; then rm $TEMP ; fi
+if [ -f $README ]; then rm $README ; fi
+
+
+for MODULE in $(ls $MODULES)
+do
+	bash $MODULES/$MODULE
+done
+
+# Create markdown
+$SRC/syntax.sh
+
+# Cleaning up
+if [ -f "$EDITOR" ]; then rm "$EDITOR"; fi
+if [ -f "$TEMP" ]; then rm "$TEMP"; fi
+
+# Create File
+clear
+cat README.md
+

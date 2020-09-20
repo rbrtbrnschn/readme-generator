@@ -1,0 +1,36 @@
+#!/bin/bash
+SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+COUNTER=1
+
+function add {
+	
+	read -p "[ ] Entry #$COUNTER: " ENTRY
+	echo -ne "\e[A\e[K" >&2
+	echo -ne "[X] Entry #$COUNTER: $ENTRY" >&2
+	echo
+	
+	echo -e "* [ ] $ENTRY\n" >> $PWD/.temp
+	ENTRIES+="$ENTRY"
+	COUNTER=$(($COUNTER +1))
+
+	read -p "Another [y/n]? " BOO
+	echo -ne "\e[A\e[K" >&2
+	seq -s'-' 0 $(tput cols) | tr -d '[:digit:]'
+	
+	case $BOO in
+	[yY] | [yY][eE][sS])
+		add
+		;;
+	[nN] | [nN][oO])
+		:
+		;;
+esac
+
+}
+
+
+echo -e "## TODO\n" >> $PWD/.temp
+echo "Todolist"
+add
+
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+read -p "[ ] Description: " DESC
+echo -ne "\e[A\e[K" >&2
+echo -ne "[X] Description: $DESC" >&2
+echo
+
+echo -e "$DESC\r" >> $PWD/.temp

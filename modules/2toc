@@ -1,0 +1,45 @@
+#!/bin/bash
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+declare -a WANTED
+
+# Welcome Message
+echo "Please mark the wanted modules with an 'x' or leave empty"
+
+for MODULE in $(ls $PWD)
+do
+	# Dont show following modules
+	# add as needed
+	case $MODULE in
+		1start)
+			continue
+			;;
+		2toc)
+			continue
+			;;
+	esac
+
+	# Get input
+	# Go up 1 clear line
+	echo $MODULE > temp
+	NAME=$(perl -pe "s/[0123456789]//g" "temp")
+	rm temp
+	read -p "$NAME: " BOO
+	echo -ne "\e[1A\e[K" >&2
+	
+	# Replace line with choice
+	case $BOO in
+	[xX])
+		echo -ne "$NAME: X" >&2
+		WANTED+="$MODULE "
+		;;
+	*)
+		echo -ne "$NAME: -" >&2
+		;;
+	esac
+	echo
+
+	# Give $WANTED to script
+
+
+
+done
