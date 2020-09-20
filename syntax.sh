@@ -1,7 +1,7 @@
 #!/bin/bash
-TEMP=".syntax"
-FINAL="NEW_README.md"
-CHECK=".temp"
+TEMP="$HOME/.syntax"
+FINAL="$HOME/README.md"
+CHECK="$HOME/.temp"
 
 CODE="s/CODE/\`/g"
 CBLOCK="s/CBLOCK/\n\`\`\`\n/g"

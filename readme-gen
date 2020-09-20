@@ -1,10 +1,12 @@
 #!/bin/bash
 # conceived during: Hooked on a feeling
-SRC="$PWD"
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SRC="$PWD/readme-generator"
+
 MODULES="$SRC/modules"
-TEMP=".temp"
-README="NEW_README.md"
-EDITOR=".editor"
+TEMP="$HOME/.temp"
+README="$HOME/README.md"
+EDITOR="$HOME/.editor"
 
 # Run modules
 if [ -f $TEMP ]; then rm $TEMP ; fi
@@ -25,5 +27,5 @@ if [ -f "$TEMP" ]; then rm "$TEMP"; fi
 
 # Create File
 clear
-if [ -f "$README" ]; then cat $README; fi
+if [ -f "$README" ]; then echo "Readme located @ $README"; fi
 

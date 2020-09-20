@@ -1,6 +1,7 @@
 #!/bin/bash
 SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 COUNTER=1
+TEMP="$HOME/.temp"
 
 function add {
 	
@@ -9,7 +10,7 @@ function add {
 	echo -ne "[X] Entry #$COUNTER: $ENTRY" >&2
 	echo
 	
-	echo -e "* [ ] $ENTRY\n" >> $PWD/.temp
+	echo -e "* [ ] $ENTRY\n" >> "$TEMP"
 	ENTRIES+="$ENTRY"
 	COUNTER=$(($COUNTER +1))
 
@@ -29,8 +30,6 @@ esac
 }
 
 
-echo -e "## TODO\n" >> $PWD/.temp
+echo -e "## TODO\n" >> $TEMP
 echo "Todolist"
 add
-
-

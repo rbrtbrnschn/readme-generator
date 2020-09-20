@@ -1,14 +1,16 @@
 #!/bin/bash
 SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+EDITOR="$HOME/.editor"
+TEMP="$HOME/.temp"
 
 # Cleaning up
-if [ -f $PWD/.editor ]; then rm "$PWD/.editor"; fi
+if [ -f $EDITOR ]; then rm "$EDITOR"; fi
 
 clear
 echo "USAGE"
 echo "Redirecting..."
 sleep 1
-vim -o "$PWD/.editor"
+vim -o "$EDITOR"
 clear
 
-echo -e "## Usage\n$(cat "$PWD/.editor")\n" >> $PWD/.temp
+echo -e "## Usage\n$(cat "$EDITOR")\n" >> $TEMP
