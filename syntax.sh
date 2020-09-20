@@ -1,6 +1,6 @@
 #!/bin/bash
 TEMP=".syntax"
-FINAL="README.md"
+FINAL="NEW_README.md"
 CHECK=".temp"
 
 CODE="s/CODE/\`/g"

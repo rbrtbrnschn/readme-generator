@@ -24,3 +24,4 @@ cd readme-generator
 <hr/>
 
 > This project was conceived to 'Hooked on a Feeling by Blue Swede'
+
