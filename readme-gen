@@ -1,10 +1,9 @@
 #!/bin/bash
 # conceived during: Hooked on a feeling
-
 SRC="$PWD"
 MODULES="$SRC/modules"
 TEMP=".temp"
-README="README.md"
+README="NEW_README.md"
 EDITOR=".editor"
 
 # Run modules
@@ -26,5 +25,5 @@ if [ -f "$TEMP" ]; then rm "$TEMP"; fi
 
 # Create File
 clear
-cat README.md
+if [ -f "$README" ]; then cat $README; fi
 
