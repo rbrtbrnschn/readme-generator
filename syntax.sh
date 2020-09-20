@@ -13,14 +13,12 @@ ITALIC="s/ITALIC/\*/g"
 REGEXES=($CBLOCKLANG $CODE $CBLOCK $BREAK $BOLD $ITALIC)
 #REGEXES=( $REGEXES )
 
-if [ -f $FILE ]; then rm $FILE; fi
+#if [ -f $TEMP]; then rm $TEMP; fi
 for REG in ${REGEXES[@]}
 do
-	echo $REG
 	perl -pe $REG $CHECK >> $TEMP
 	cat $TEMP > $FINAL
 	CHECK="$FINAL"
 	rm $TEMP
 done
 
-rm $TEMP

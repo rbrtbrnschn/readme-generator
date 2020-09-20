@@ -26,6 +26,6 @@ if [ -f "$EDITOR" ]; then rm "$EDITOR"; fi
 if [ -f "$TEMP" ]; then rm "$TEMP"; fi
 
 # Create File
-clear
+#clear
 if [ -f "$README" ]; then echo "Readme located @ $README"; fi
 
