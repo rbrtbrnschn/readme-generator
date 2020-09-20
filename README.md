@@ -2,7 +2,7 @@
 This README.md was automatically created by this script.
 ## TODO
 
-* [ ] Create me.
+* [X] Create me.
 
 * [ ] Finish me.
 
@@ -20,6 +20,10 @@ cd readme-generator
 
 ## Usage
 **Very Simple** & Very *EASY*
+
+```
+readme-gen
+```
 
 <hr/>
 
