@@ -4,6 +4,7 @@ This README.md was automatically created by this script.
 
 * [X] Create me.
 
+* [X] Finish me.
 
 * [ ] Make me a fancy b!@#h!
 
@@ -19,24 +20,23 @@ cd readme-generator
 
 ## Usage
 **Custom Syntax** & *EASY* To Use
-
+```
 +----------------+-----------+
 |     SYNTAX     |  MARKDOWN |
++================+===========+
+|      CODE      |     `     |
 +----------------+-----------+
-|      CODE      |           |
+|     CBLOCK     |    ```    |
 +----------------+-----------+
-|     CBLOCK     |           |
+| CODELANG<lang> | ```<lang> |
 +----------------+-----------+
-| CODELANG<lang> |    <lang> |
-+----------------+-----------+
-|      BREAK     |           |
+|      BREAK     |   <hr/>   |
 +----------------+-----------+
 |      BOLD      |     **    |
 +----------------+-----------+
 |     ITALIC     |     *     |
 +----------------+-----------+
 
-```
 readme-gen
 ```
 
