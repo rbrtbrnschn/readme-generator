@@ -1,6 +1,6 @@
 #!/bin/bash
 PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-declare -a WANTED
+declare -a UNWANTED
 TEMP="$HOME/.temp"
 
 # Welcome Message
@@ -29,16 +29,21 @@ do
 	
 	# Replace line with choice
 	case $BOO in
-	[xX])
+	"")
 		echo -ne "$NAME: X" >&2
-		WANTED+="$MODULE "
 		;;
 	*)
+		UNWANTED+="$MODULE "
 		echo -ne "$NAME: -" >&2
 		;;
 	esac
 	echo
 
-	# Give $WANTED to script
 
+done
+
+# Give $WANTED to script
+for DIS in $UNWANTED; do
+	echo "disabled $DIS"
+	mv $MODULES/$DIS $DISABLED/$DIS
 done

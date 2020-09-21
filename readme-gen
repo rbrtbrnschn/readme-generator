@@ -4,18 +4,32 @@ PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 SRC="$PWD/readme-generator"
 
 MODULES="$SRC/modules"
+DISABLED="$SRC/disabled"
 TEMP="$HOME/.temp"
 README="$HOME/README.md"
 EDITOR="$HOME/.editor"
+export SRC="$SRC"
+export MODULES="$SRC/modules"
+export DISABLED="$DISABLED"
 
 # Run modules
 if [ -f $TEMP ]; then rm $TEMP ; fi
 if [ -f $README ]; then rm $README ; fi
 
+# Returning Disabled Modules
+for DIS in $(ls $DISABLED); do
+	mv $DISABLED/$DIS $MODULES/$DIS
+done
 
+# Running Modules
 for MODULE in $(ls $MODULES)
 do
 	bash $MODULES/$MODULE
+done
+
+# Returning Disabled Modules
+for DIS in $(ls $DISABLED); do
+	mv $DISABLED/$DIS $MODULES/$DIS
 done
 
 # Create markdown
