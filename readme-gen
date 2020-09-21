@@ -26,6 +26,7 @@ for MODULE in $(ls $MODULES)
 do
 	bash $MODULES/$MODULE
 done
+clear
 
 # Returning Disabled Modules
 for DIS in $(ls $DISABLED); do

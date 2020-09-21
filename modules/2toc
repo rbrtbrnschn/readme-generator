@@ -4,7 +4,8 @@ declare -a UNWANTED
 TEMP="$HOME/.temp"
 
 # Welcome Message
-echo "Please mark the wanted modules with an 'x' or leave empty"
+echo "Please mark the modules you dont want."
+echo "To use a module hit ENTER."
 
 for MODULE in $(ls $PWD)
 do
@@ -44,6 +45,5 @@ done
 
 # Give $WANTED to script
 for DIS in $UNWANTED; do
-	echo "disabled $DIS"
 	mv $MODULES/$DIS $DISABLED/$DIS
 done
