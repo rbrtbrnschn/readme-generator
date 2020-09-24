@@ -1,4 +1,4 @@
-# README-GEN
+# Readme Generator | Maliyah
 This README.md was automatically created by this script.
 ## TODO
 
